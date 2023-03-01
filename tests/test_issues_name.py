@@ -18,7 +18,7 @@ def test_name_issue_with_lambda_steps():
     open_main_page()
     search_for_repository('eroshenkoam/allure-example')
     open_issues_tab()
-    shoild_see_issue_with_number('72')
+    shoild_see_issue_with_number('#72')
 
 
 @allure.step('Открываем главную страницу')
@@ -36,8 +36,8 @@ def open_issues_tab():
     browser.all('.menu-item').element_by(have.text('Issues')).click()
 
 @allure.step('Проверяем наличик Issue с номером {number}')
-def shoild_see_issue_with_number():
-    browser.element('.codesearch-results').should(have.text('#' + number))
+def shoild_see_issue_with_number(number):
+    browser.element('.codesearch-results').should(have.text(number))
 
     
 
