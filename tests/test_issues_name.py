@@ -4,7 +4,7 @@ from selene import have
 from allure_commons.types import Severity
 
 
-def test_name_issue_with_selene():
+def test_name_issue_with_selene(open_browser_with_size_1920_1080):
     browser.open('https://github.com')
 
     browser.element('.header-search-input').click()
@@ -16,7 +16,7 @@ def test_name_issue_with_selene():
     browser.element('.codesearch-results').should(have.text('#72'))
 
 
-def test_name_issue_with_allure_step():
+def test_name_issue_with_allure_step(open_browser_with_size_1920_1080):
     with allure.step('Открываем главную страницу'):
         browser.open('https://github.com')
 
@@ -32,7 +32,7 @@ def test_name_issue_with_allure_step():
         browser.element('.codesearch-results').should(have.text('#72'))
 
 
-def test_name_issue_allure_step():
+def test_name_issue_allure_step(open_browser_with_size_1920_1080):
     open_main_page()
     search_for_repository('eroshenkoam/allure-example')
     open_issues_tab()
@@ -64,6 +64,6 @@ def shoild_see_issue_with_number(number):
 @allure.feature("Задачи в репозитории")
 @allure.story("Авторизованный пользователь может создать задачу в репозитории")
 @allure.link("https://github.com", name="Testing")
-def test_decorator_labels():
+def test_decorator_labels(open_browser_with_size_1920_1080):
     pass
 
